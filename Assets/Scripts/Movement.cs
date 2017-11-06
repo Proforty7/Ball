@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
+//BP Gaandu hai :)
+
+
     private GameObject player;
     public Material bg;
     float k;
