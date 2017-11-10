@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bg: {fileID: 2100000, guid: 6270a75823bb39d4cb0ebc2d16a84568, type: 2}
+  factor: 0.001
 --- !u!4 &733163954
 Transform:
   m_ObjectHideFlags: 0
