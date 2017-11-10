@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-//BP Gaandu hai :)
-
-
     private GameObject player;
     public Material bg;
     float k;
@@ -16,7 +13,6 @@ public class Movement : MonoBehaviour {
         player = GameObject.Find("Player");
         k = 0.005f;
         InvokeRepeating("incSpeed", 5, 5);
-        // bg = GameObject.Find("Background").GetComponent<Material>();
     }
 	
 	// Update is called once per frame
@@ -26,7 +22,6 @@ public class Movement : MonoBehaviour {
         {
             Debug.Log(k);
             bg.mainTextureOffset = new Vector2(bg.mainTextureOffset.x, bg.mainTextureOffset.y + k);
-           // player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.02f, player.transform.position.z);
         }
 	}
 
