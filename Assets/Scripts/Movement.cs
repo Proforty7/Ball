@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-//BP Gaandu hai :)
-
-
-    private GameObject player;
     public Material bg;
     float k;
 	// Use this for initialization
 	void Start () {
         bg.mainTextureOffset = new Vector2(bg.mainTextureOffset.x, 0);
-        player = GameObject.Find("Player");
         k = 0.005f;
         InvokeRepeating("incSpeed", 5, 5);
         // bg = GameObject.Find("Background").GetComponent<Material>();
