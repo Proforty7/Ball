@@ -11,7 +11,6 @@ public class Movement : MonoBehaviour {
         bg.mainTextureOffset = new Vector2(bg.mainTextureOffset.x, 0);
         k = 0.005f;
         InvokeRepeating("incSpeed", 5, 5);
-        // bg = GameObject.Find("Background").GetComponent<Material>();
     }
 	
 	// Update is called once per frame
@@ -21,7 +20,6 @@ public class Movement : MonoBehaviour {
         {
             Debug.Log(k);
             bg.mainTextureOffset = new Vector2(bg.mainTextureOffset.x, bg.mainTextureOffset.y + k);
-           // player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.02f, player.transform.position.z);
         }
 	}
 
