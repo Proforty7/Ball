@@ -58,7 +58,14 @@ public class Movement : MonoBehaviour {
 
         }
 
-        else
+        if(playerTransform.transform.position.x > 3)
+        {
+            playerTransform.transform.position = new Vector3(3, -2.45f, -2);
+        }
+        if(playerTransform.transform.position.x < -3)
+        {
+            playerTransform.transform.position = new Vector3(-3, -2.45f, -2);
+        }
 
     }
 
