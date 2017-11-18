@@ -43,21 +43,24 @@ public class Movement : MonoBehaviour {
 
            }*/
 
-        if (Input.GetButton("Fire1"))
-        {
+		if (Input.GetButton ("Fire1")) {
        
-            newPosition = Input.mousePosition;
-            Vector2 pos = Camera.main.ScreenToWorldPoint(newPosition);
-            Debug.Log(pos);
-           // float final = newPosition.x - origin.x;
-          //  Debug.Log(origin + " " + newPosition + " " + pos);
-          //  while(playerTransform.transform.position.x != pos.x)
-                playerTransform.transform.position = new Vector3(pos.x * factor, -2.45f, -2);
-            bg.mainTextureOffset = new Vector2(bg.mainTextureOffset.x, bg.mainTextureOffset.y + k);
+			playerTransform.Rotate (0, 0, 50);
+			newPosition = Input.mousePosition;
+			Vector2 pos = Camera.main.ScreenToWorldPoint (newPosition);
+			Debug.Log (pos);
+			// float final = newPosition.x - origin.x;
+			//  Debug.Log(origin + " " + newPosition + " " + pos);
+			//  while(playerTransform.transform.position.x != pos.x)
+			playerTransform.transform.position = new Vector3 (pos.x * factor, -2.45f, -2);
+			bg.mainTextureOffset = new Vector2 (bg.mainTextureOffset.x, bg.mainTextureOffset.y + k);
 
 
-        }
-
+		} 
+		else 
+		{
+			playerTransform.Rotate (0, 0, 5);
+		}
         if(playerTransform.transform.position.x > 3)
         {
             playerTransform.transform.position = new Vector3(3, -2.45f, -2);
