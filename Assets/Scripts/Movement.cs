@@ -27,28 +27,13 @@ public class Movement : MonoBehaviour {
 
         Vector2 newPosition;
 
-         /*  if(Input.GetButtonDown("Fire1"))
-           {
-               target = Input.mousePosition;
-               origin = Camera.main.ScreenToWorldPoint(target);
-           }/*
-           else if(Input.GetButton("Fire1"))
-           {
-
-               newPosition = Input.mousePosition;
-               float pos = newPosition.x - origin.x;
-               Debug.Log(origin + " " + newPosition + " " + pos);
-               playerTransform.transform.position += new Vector3(pos * factor, 0, 0);
-               bg.mainTextureOffset = new Vector2(bg.mainTextureOffset.x, bg.mainTextureOffset.y + k);
-
-           }*/
-
+        
 		if (Input.GetButton ("Fire1")) {
        
 			playerTransform.Rotate (0, 0, 50);
 			newPosition = Input.mousePosition;
 			Vector2 pos = Camera.main.ScreenToWorldPoint (newPosition);
-			Debug.Log (pos);
+		//	Debug.Log (pos);
 			// float final = newPosition.x - origin.x;
 			//  Debug.Log(origin + " " + newPosition + " " + pos);
 			//  while(playerTransform.transform.position.x != pos.x)
@@ -59,7 +44,7 @@ public class Movement : MonoBehaviour {
 		} 
 		else 
 		{
-			playerTransform.Rotate (0, 0, 5);
+			playerTransform.Rotate (0, 0, 1);
 		}
         if(playerTransform.transform.position.x > 3)
         {
