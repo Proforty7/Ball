@@ -17,8 +17,22 @@ public class ObsMovement : MonoBehaviour {
 	void Update () {
 		//obj = GameObject.FindGameObjectWithTag ("Obstacle");
 		//pos = obj.transform.position;
-		if (Input.GetButton ("Fire1"))
+		if (Input.GetButton ("Fire1")) {
 			gameObject.transform.position -= new Vector3 (0, 0.03f, 0);
 		}
+		else 
+		{
+			gameObject.transform.position -= new Vector3 (0, 0.001f, 0);
+			slowMo ();
+		}
 
+		if (transform.position.y <= -6)
+			Destroy (gameObject);
+
+		}
+	private void slowMo()
+	{
+		Time.timeScale = 0.1f;
+	//	Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale * 0.001f;
+	}
 }

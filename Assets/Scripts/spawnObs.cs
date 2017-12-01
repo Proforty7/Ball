@@ -24,12 +24,18 @@ public class spawnObs : MonoBehaviour {
 
 	void spawn()
 	{
-		if(Input.GetButton("Fire1"))
-			{
+		if (Input.GetButton ("Fire1")) {
 			Instantiate (obs, new Vector3 (Random.Range (-5f, -2f), pos.y, -1), Quaternion.identity);
 			//pos = m.pos;
 			Debug.Log (pos);
-			}
+		}
+		else
+			slowMo ();
 	
+	}
+	private void slowMo()
+	{
+		Time.timeScale = 0.1f;
+	//	Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale * 0.001f;
 	}
 }

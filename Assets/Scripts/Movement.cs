@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour {
     float k;
     public float factor;
     Vector2 origin, target;
+	private Vector2 pos;
 
     void Awake()
     {
@@ -29,23 +30,19 @@ public class Movement : MonoBehaviour {
 
         
 		if (Input.GetButton ("Fire1")) {
-       
+			Time.timeScale = 1;
 			playerTransform.Rotate (0, 0, 50);
 			newPosition = Input.mousePosition;
-			Vector2 pos = Camera.main.ScreenToWorldPoint (newPosition);
-		//	Debug.Log (pos);
-			// float final = newPosition.x - origin.x;
-			//  Debug.Log(origin + " " + newPosition + " " + pos);
-			//  while(playerTransform.transform.position.x != pos.x)
-			playerTransform.transform.position = new Vector3 (pos.x * factor, -2.45f, -2);
-			bg.mainTextureOffset = new Vector2 (bg.mainTextureOffset.x, bg.mainTextureOffset.y + k);
-
-
+			pos = Camera.main.ScreenToWorldPoint (newPosition);
 		} 
 		else 
 		{
 			playerTransform.Rotate (0, 0, 1);
+			slowMo ();
 		}
+
+		playerTransform.transform.position = new Vector3 (pos.x * factor, -2.45f, -2);
+		bg.mainTextureOffset = new Vector2 (bg.mainTextureOffset.x, bg.mainTextureOffset.y + k);
         if(playerTransform.transform.position.x > 3)
         {
             playerTransform.transform.position = new Vector3(3, -2.45f, -2);
@@ -57,6 +54,11 @@ public class Movement : MonoBehaviour {
 
     }
 
+	private void slowMo()
+	{
+		Time.timeScale = 0.1f;
+		//Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale * 0.001f;
+	}
     private void incSpeed()
     {
         k += 0.0005f;
