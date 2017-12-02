@@ -10,9 +10,9 @@ public class DestroyObs : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (gameObject.transform.position.y <= -6)
-			Destroy (gameObject);
+	void OnCollisionEnter2D (Collision2D col) {
+		if (col.gameObject.tag == "Obstacle")
+			Destroy (col.gameObject);
 
 	
 	}
